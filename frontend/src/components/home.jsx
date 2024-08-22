@@ -53,7 +53,6 @@ const TableBox = styled.div`
 const TableContainer = styled.div`
   display: flex;
   flex-direction: row;
-  padding-top: 15px;
   padding-bottom: 3%;
 `;
 
@@ -71,7 +70,6 @@ const TableHeader = styled.th`
 
 const TableCell = styled.td`
   border: 1px solid #ddd;
-  padding: 8px;
   text-align: center;
 `;
 
@@ -196,7 +194,7 @@ export const Home = () => {
     </ChartContainer>
     <TableContainer>
       <TableBox>
-    <ResponsiveContainer width="90%" height={400}>
+
     <TableTitle>Number of Songs and Albums of Artists</TableTitle>
       <Table>
       <thead>
@@ -216,10 +214,8 @@ export const Home = () => {
         ))}
       </tbody>
     </Table>
-    </ResponsiveContainer>
     </TableBox>
     <TableBox>
-      <ResponsiveContainer width="90%" height={200}>
       <TableTitle>Number of Songs per Albums</TableTitle>
           <Table>
             <thead>
@@ -239,7 +235,6 @@ export const Home = () => {
               ))}
             </tbody>
           </Table>
-    </ResponsiveContainer>
     </TableBox>
     </TableContainer>
     </MainContainer>

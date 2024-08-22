@@ -3,17 +3,22 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import songsRouter from './routes/songs';
 
-const app: application = express();
-app.use(cors());
+const app= express();
+//app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000', 
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type, Authorization',
+}));
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/musicdb').then(() => {
+mongoose.connect('mongodb://mongo:27017/musicdb').then(() => {
   console.log('Connected to MongoDB');
 }).catch((error) => {
   console.error('Error connecting to MongoDB:', error);
 });
 
-app.use('/api', songsRouter);
+app.use('/', songsRouter);
 
 app.listen(5000, () => {
   console.log('Server is running on port 5000');
