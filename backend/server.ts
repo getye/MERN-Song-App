@@ -12,7 +12,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-mongoose.connect('mongodb://mongo:27017/musicdb').then(() => {
+mongoose.connect('mongodb://mern-song-app-1.onrender.com:27017/musicdb').then(() => {
   console.log('Connected to MongoDB');
 }).catch((error) => {
   console.error('Error connecting to MongoDB:', error);
