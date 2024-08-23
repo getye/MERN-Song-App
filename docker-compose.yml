@@ -7,8 +7,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-      MONGO_URL: mongodb+srv://getye:getye2008%40em@songs.mongodb.net/musicdb?retryWrites=true&w=majority
-
+      MONGO_URL: songs.mongodb.net
     depends_on:
       - mongo
     networks:
