@@ -27,7 +27,7 @@ const NavItem = styled.a(
     margin: '0 1rem',
     textDecoration: 'none',
     color: '#fff',
-    fontSize: '1.2rem',
+    fontSize: '1.1rem',
     '&:hover': {
       color: '#FFD700',
     },
@@ -42,9 +42,9 @@ export const Navbar = () => {
     <NavbarContainer>
       <div>Song App</div> 
       <div>
-        <NavItem href="/">Home</NavItem>
-        <NavItem href="/add">Add</NavItem>
-        <NavItem href="/view">View</NavItem>
+        <NavItem href="/">Dashboard</NavItem>
+        <NavItem href="/add">Add Song</NavItem>
+        <NavItem href="/view">View Song</NavItem>
       </div>
     </NavbarContainer>
   );

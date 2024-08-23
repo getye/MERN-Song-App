@@ -1,7 +1,7 @@
 import express, { application } from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import songsRouter from './routes/songs';
+import songsRouter from './routes/songRoutes';
 
 const app= express();
 //app.use(cors());

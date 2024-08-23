@@ -81,7 +81,7 @@ const TableTitle = styled.h4`
   text-align: left;
 `;
 
-const COLORS = ['#6088FE', '#a0C49F', '#0FBB28', '#cF8042'];
+const COLORS = ['#6088FE', '#800080', '#0FBB28', '#cF8042'];
 
 export const Home = () => {
   const { songs } = useSelector((state) => state.songs);

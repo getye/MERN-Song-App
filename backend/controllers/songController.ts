@@ -1,10 +1,10 @@
-import { Router, Request, Response } from 'express';
-import Song from '../models/song';
+// controllers/songController.ts
 
-const router = Router();
+import { Request, Response } from 'express';
+import Song from '../models/songModel';
 
 // Create a song
-router.post('/addsong', async (req: Request, res: Response) => {
+export const createSong = async (req: Request, res: Response) => {
   try {
     const song = new Song(req.body);
     await song.save();
@@ -13,20 +13,20 @@ router.post('/addsong', async (req: Request, res: Response) => {
     console.error('Error creating song:', error);
     res.status(500).send({ error: 'Failed to create song' });
   }
-});
+};
 
 // Read all songs
-router.get('/viewsongs', async (req: Request, res: Response) => {
+export const viewSongs = async (req: Request, res: Response) => {
   try {
     const songs = await Song.find();
     res.send(songs);
   } catch (error) {
     res.status(500).send({ error: 'Failed to fetch songs' });
   }
-});
+};
 
 // Update a song
-router.put('/updatesong/:id', async (req: Request, res: Response) => {
+export const updateSong = async (req: Request, res: Response) => {
   try {
     const song = await Song.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!song) {
@@ -36,10 +36,10 @@ router.put('/updatesong/:id', async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).send({ error: 'Failed to update song' });
   }
-});
+};
 
 // Delete a song
-router.delete('/songs/:id', async (req: Request, res: Response) => {
+export const deleteSong = async (req: Request, res: Response) => {
   try {
     const song = await Song.findByIdAndDelete(req.params.id);
     if (!song) {
@@ -49,6 +49,4 @@ router.delete('/songs/:id', async (req: Request, res: Response) => {
   } catch (error) {
     res.status(500).send({ error: 'Failed to delete song' });
   }
-});
-
-export default router;
+};
