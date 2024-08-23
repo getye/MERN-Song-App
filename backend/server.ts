@@ -1,20 +1,18 @@
 import express, { application } from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import dotenv from 'dotenv'
 import songsRouter from './routes/songRoutes';
 
 const app= express();
 //app.use(cors());
-dotenv.config();
 app.use(cors({
   origin: 'https://inquisitive-griffin-a97ff5.netlify.app', 
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type, Authorization',
 }));
 app.use(express.json());
-const mongoUrl = process.env.MONGO_URL;
-mongoose.connect(mongoUrl as string ).then(() => {
+
+mongoose.connect('mongodb://admin:5V2NuPFfT7yRvsYJ@SG-songs-66516.servers.mongodirector.com:27017/admin').then(() => {
   console.log('Connected to MongoDB');
 }).catch((error) => {
   console.error('Error connecting to MongoDB:', error);
