@@ -65,7 +65,7 @@ function* handleSearchSongs(action: SearchSongsAction) {
 
 function* fetchSongs() {
   try {
-    const response: { data: Song[] } = yield call(axios.get, 'https://mern-song-app-1.onrender.com/viewsongs');
+    const response: { data: Song[] } = yield call(axios.get, 'https://mern-song-app.onrender.com/viewsongs');
     yield put({ type: FETCH_SONGS_SUCCESS, payload: response.data });
   } catch (error) {
     yield put({ type: FETCH_SONGS_FAILURE, payload: error.message });
@@ -74,7 +74,7 @@ function* fetchSongs() {
 
 function* addSong(action: AddSongRequestAction) {
   try {
-    const response: { data: Song } = yield call(axios.post, 'https://mern-song-app-1.onrender.com/addsong', action.payload);
+    const response: { data: Song } = yield call(axios.post, 'https://mern-song-app.onrender.com/addsong', action.payload);
     yield put({ type: ADD_SONG_SUCCESS, payload: response.data });
     toast.success('Song added successfully!');
   } catch (error) {
@@ -86,7 +86,7 @@ function* addSong(action: AddSongRequestAction) {
 function* updateSong(action: UpdateSongRequestAction) {
   try {
     const { id, song } = action.payload;
-    const response: { data: Song } = yield call(axios.put, `https://mern-song-app-1.onrender.com/updatesong/${id}`, song);
+    const response: { data: Song } = yield call(axios.put, `https://mern-song-app.onrender.com/updatesong/${id}`, song);
     yield put({ type: UPDATE_SONG_SUCCESS, payload: response.data });
     toast.success('Song updated successfully!');
   } catch (error) {
@@ -96,7 +96,7 @@ function* updateSong(action: UpdateSongRequestAction) {
 
 function* deleteSong(action: DeleteSongRequestAction) {
   try {
-    yield call(axios.delete, `https://mern-song-app-1.onrender.com/songs/${action.payload}`);
+    yield call(axios.delete, `https://mern-song-app.onrender.com/songs/${action.payload}`);
     yield put({ type: DELETE_SONG_SUCCESS, payload: action.payload });
     toast.success('Song deleted successfully!');
   } catch (error) {
