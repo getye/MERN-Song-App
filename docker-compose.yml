@@ -7,7 +7,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-      MONGO_URL: mongodb://mongo:27017/musicdb
+      MONGO_URL: mongodb://admin:5V2NuPFfT7yRvsYJ@SG-songs-66516.servers.mongodirector.com:27017/admin
     depends_on:
       - mongo
     networks:
