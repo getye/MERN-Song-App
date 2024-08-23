@@ -12,6 +12,8 @@ services:
       - mongo
     networks:
       - mynetwork
+    dns:
+       - 172.25.16.1
   
   # MongoDB Service
   mongo:
