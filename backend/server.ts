@@ -6,7 +6,7 @@ import songsRouter from './routes/songRoutes';
 const app= express();
 //app.use(cors());
 app.use(cors({
-  origin: 'http://localhost:3000', 
+  origin: 'https://inquisitive-griffin-a97ff5.netlify.app', 
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type, Authorization',
 }));
