@@ -12,9 +12,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-mongoose.connect('mongodb://admin:5V2NuPFfT7yRvsYJ@SG-songs-66516.servers.mongodirector.com:27017/admin', {
-  serverSelectionTimeoutMS: 60000 
-}).then(() => {
+mongoose.connect('mongodb://admin:5V2NuPFfT7yRvsYJ@SG-songs-66516.servers.mongodirector.com:27017/admin').then(() => {
   console.log('Connected to MongoDB');
 }).catch((error) => {
   console.error('Error connecting to MongoDB:', error);
