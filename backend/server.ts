@@ -2,8 +2,11 @@ import express, { application } from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import songsRouter from './routes/songRoutes';
+import dotenv from 'dotenv'
 
 const app= express();
+
+dotenv.config();
 //app.use(cors());
 app.use(cors({
   origin: 'https://inquisitive-griffin-a97ff5.netlify.app', 
@@ -12,11 +15,13 @@ app.use(cors({
 }));
 app.use(express.json());
 
-mongoose.connect('mongodb://admin:5V2NuPFfT7yRvsYJ@SG-songs-66516.servers.mongodirector.com:27017/admin').then(() => {
-  console.log('Connected to MongoDB');
-}).catch((error) => {
-  console.error('Error connecting to MongoDB:', error);
-});
+mongoose.connect(process.env.MONGO_URL!)
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+  });
 
 app.use('/', songsRouter);
 
