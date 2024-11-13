@@ -11,12 +11,6 @@ const MainContainer = styled.div`
   padding-top: 5%;
 `;
 
-const ChartContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 5%;
-  justifyContent: space-between;
-`;
 
 const BarChartContainer = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -51,11 +45,7 @@ const TableBox = styled.div`
   align-items: center;
 `;
 
-const TableContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 3%;
-`;
+
 
 const Table = styled.table`
   width: 80%;
@@ -150,7 +140,6 @@ export const Home = () => {
   return (
     <MainContainer>
       <Grid container spacing={2}>
-        <ChartContainer>
           <Grid item xs={12} md={6}>
             <BarChartContainer>
               <ResponsiveContainer width="90%" height={400}>
@@ -197,10 +186,8 @@ export const Home = () => {
                 </ResponsiveContainer>
             </PieChartContainer>
           </Grid>
-        </ChartContainer>
       </Grid>
       <Grid container spacing={2}>
-        <TableContainer>
           <Grid item xs={12} md={6}>
               <TableBox>
                 <TableTitle>Number of Songs and Albums of Artists</TableTitle>
@@ -247,7 +234,6 @@ export const Home = () => {
                     </Table>
               </TableBox>
             </Grid>
-        </TableContainer>
       </Grid>
     </MainContainer>
   );
