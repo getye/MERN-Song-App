@@ -42,7 +42,7 @@ const TableCell = styled.td`
 
 const ChartTitle = styled.h4`
   text-align: center;
-  padding-top: 12px;
+  padding-top: 32px;
 `;
 
 const TableTitle = styled.h4`
@@ -162,6 +162,7 @@ export const Home = () => {
       </Grid>
       <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
+             <TableBox>
                 <TableTitle>Number of Songs and Albums of Artists</TableTitle>
                   <Table>
                     <thead>
@@ -181,6 +182,7 @@ export const Home = () => {
                       ))}
                     </tbody>
                   </Table>
+              </TableBox>
             </Grid>
             <Grid item xs={12} md={6}>
               <TableBox>
