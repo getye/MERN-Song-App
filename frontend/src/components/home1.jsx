@@ -144,7 +144,7 @@ export const Home = () => {
     value: genreCount[genre],
   }));
 
- // Aggregate data: number of songs and distinct albums per artist
+// Aggregate data: number of songs and distinct albums per artist
 const artistData = songs.reduce((acc, song) => {
     if (!acc[song.artist]) {
       acc[song.artist] = { songsCount: 0, albums: new Set() };
