@@ -17,7 +17,6 @@ const TableBox = styled.div`
   border-radius: 5px;
   width: 100%;
   padding-bottom: 16px;
-  padding-top: 28px;
   padding-right: 2%;
   align-items: center;
 `;
@@ -117,7 +116,7 @@ export const Home = () => {
 
   return (
     <>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{paddingTop:15}}>
           <Grid item xs={12} md={6}>
               <ResponsiveContainer width="100%" height={400}>
               <ChartTitle>Number of Songs, Artists, Albums and Genres</ChartTitle>
@@ -161,7 +160,7 @@ export const Home = () => {
                 </ResponsiveContainer>
           </Grid>
       </Grid>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{paddingTop:5}}>
           <Grid item xs={12} md={6}>
              <TableBox>
                 <TableTitle>Number of Songs and Albums of Artists</TableTitle>
