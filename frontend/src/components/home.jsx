@@ -42,6 +42,7 @@ const TableCell = styled.td`
 
 const ChartTitle = styled.h4`
   text-align: center;
+  padding-top: 12px;
 `;
 
 const TableTitle = styled.h4`
