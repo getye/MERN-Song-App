@@ -2,7 +2,7 @@
 import { SongList } from './components/SongList';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { Navbar } from './Navigations/navbar';
-import { Home } from './components/home1'
+import { Home } from './components/home'
 import { MusicForm } from './components/register';
 
 
