@@ -58,7 +58,7 @@ A MERN stack application for managing and displaying songs by genre and artist. 
 ### Tools
 - **MongoDB**: NoSQL database for storing song data.
 - **Redux**: State management library.
-- **Redux Saga**: Middleware for handling side effects in Redux.
+- **Redux Saga**: Middleware for handling API calls
 - **Docker**: For containerizing the application for deployment.
 - **TypeScript**: Used for static typing in parts of the project.
 
