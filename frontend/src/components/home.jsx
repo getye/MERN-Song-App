@@ -116,7 +116,7 @@ export const Home = () => {
 
   return (
     <>
-      <Grid container spacing={2} sx={{paddingTop:15}}>
+      <Grid container spacing={2} sx={{paddingTop:15, paddingBottom:10}}>
           <Grid item xs={12} md={6}>
               <ResponsiveContainer width="100%" height={400}>
               <ChartTitle>Number of Songs, Artists, Albums and Genres</ChartTitle>
