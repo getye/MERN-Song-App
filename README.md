@@ -1,8 +1,8 @@
 # Song Application
 
-A full-stack MERN application for managing and displaying songs by genre and artist. This application allows users to add, update, and view songs. The frontend is powered by React with Redux for state management, while Redux Saga is used to handle asynchronous API calls. The backend is built with Node.js, Express, and MongoDB.
+A MERN stack application for managing and displaying songs by genre and artist. This application allows users to add, update, and view songs. The frontend is powered by React with Redux for state management, while Redux Saga is used to handle asynchronous API calls. The backend is built with Node.js, Express, and MongoDB. The application is Dockerized and deployed on **Netlify** (frontend) and **Render** (backend). You can access the application here.
 
-The application is Dockerized and deployed on **Netlify** (frontend) and **Render** (backend).
+[Go to the App](https://song-management.netlify.app/) 
 
 ## Table of Contents
 - [Features](#features)
