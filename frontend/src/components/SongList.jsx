@@ -9,6 +9,8 @@ import {
 import styled from '@emotion/styled';
 import Modal from 'react-modal';
 import { ToastContainer } from 'react-toastify';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 const Container = styled.div`
@@ -290,8 +292,8 @@ export const SongList = () => {
             <td>{song.artist}</td>
             <td>{song.album}</td>
             <td>{song.genre}</td>
-            <td><UpdateButton onClick={() => handleUpdateSong(song)}>Update</UpdateButton>
-            <DeleteButton onClick={() => handleDeleteSong(song._id)}>Delete</DeleteButton> </td>
+            <td><UpdateButton onClick={() => handleUpdateSong(song)}><VisibilityIcon/></UpdateButton>
+            <DeleteButton onClick={() => handleDeleteSong(song._id)}><DeleteIcon/></DeleteButton> </td>
           </TableRow>
           ))}
         </tbody>
