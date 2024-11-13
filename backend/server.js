@@ -12,7 +12,7 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 //app.use(cors());
 app.use((0, cors_1.default)({
-    origin: 'https://song-management.netlify.app/',
+    origin: 'https://song-management.netlify.app',
     methods: 'GET,POST,PUT,DELETE',
     allowedHeaders: 'Content-Type, Authorization',
 }));
