@@ -150,10 +150,8 @@ export const Home = () => {
   return (
     <MainContainer>
       <Grid container spacing={2}>
-        
-        {/* Bar and Pie Chart Container */}
-        <Grid item xs={12} md={6}>
-          <ChartContainer>
+        <ChartContainer>
+          <Grid item xs={12} md={6}>
             <BarChartContainer>
               <ResponsiveContainer width="90%" height={400}>
               <ChartTitle>Number of Songs, Artists, Albums and Genres</ChartTitle>
@@ -172,6 +170,8 @@ export const Home = () => {
               </BarChart>
               </ResponsiveContainer>
             </BarChartContainer>
+          </Grid>
+          <Grid item xs={12} md={6}>
             <PieChartContainer>
                 <ResponsiveContainer width="90%" height={400}>
               <ChartTitle>Number of Songs per Genre</ChartTitle>
@@ -196,57 +196,58 @@ export const Home = () => {
                 </PieChart>
                 </ResponsiveContainer>
             </PieChartContainer>
-          </ChartContainer>
-        </Grid>
-
-        {/* Table Container */}
-        <Grid item xs={12} md={6}>
-          <TableContainer>
-            <TableBox>
-
-          <TableTitle>Number of Songs and Albums of Artists</TableTitle>
-            <Table>
-            <thead>
-              <tr>
-                <TableHeader>Artist</TableHeader>
-                <TableHeader>Number of Songs</TableHeader>
-                <TableHeader>Number of Albums</TableHeader>
-              </tr>
-            </thead>
-            <tbody>
-              {artistDataArray.map((data) => (
-                <tr key={data.artist}>
-                  <TableCell>{data.artist}</TableCell>
-                  <TableCell>{data.songsCount}</TableCell>
-                  <TableCell>{data.albumsCount}</TableCell>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-          </TableBox>
-          <TableBox>
-            <TableTitle>Number of Songs per Albums</TableTitle>
-                <Table>
-                  <thead>
-                    <tr>
-                      <TableHeader>Album</TableHeader>
-                      <TableHeader>Artist</TableHeader>
-                      <TableHeader>Number of Songs</TableHeader>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {albumDataArray.map((data, index) => (
-                      <tr key={index}>
-                        <TableCell>{data.album}</TableCell>
-                        <TableCell>{data.artist}</TableCell>
-                        <TableCell>{data.songsCount}</TableCell>
+          </Grid>
+        </ChartContainer>
+      </Grid>
+      <Grid container spacing={2}>
+        <TableContainer>
+          <Grid item xs={12} md={6}>
+              <TableBox>
+                <TableTitle>Number of Songs and Albums of Artists</TableTitle>
+                  <Table>
+                    <thead>
+                      <tr>
+                        <TableHeader>Artist</TableHeader>
+                        <TableHeader>Number of Songs</TableHeader>
+                        <TableHeader>Number of Albums</TableHeader>
                       </tr>
-                    ))}
-                  </tbody>
-                </Table>
-          </TableBox>
-          </TableContainer>
-        </Grid>
+                    </thead>
+                    <tbody>
+                      {artistDataArray.map((data) => (
+                        <tr key={data.artist}>
+                          <TableCell>{data.artist}</TableCell>
+                          <TableCell>{data.songsCount}</TableCell>
+                          <TableCell>{data.albumsCount}</TableCell>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+              </TableBox>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <TableBox>
+                <TableTitle>Number of Songs per Albums</TableTitle>
+                    <Table>
+                      <thead>
+                        <tr>
+                          <TableHeader>Album</TableHeader>
+                          <TableHeader>Artist</TableHeader>
+                          <TableHeader>Number of Songs</TableHeader>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {albumDataArray.map((data, index) => (
+                          <tr key={index}>
+                            <TableCell>{data.album}</TableCell>
+                            <TableCell>{data.artist}</TableCell>
+                            <TableCell>{data.songsCount}</TableCell>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </Table>
+              </TableBox>
+            </Grid>
+        </TableContainer>
       </Grid>
     </MainContainer>
   );
