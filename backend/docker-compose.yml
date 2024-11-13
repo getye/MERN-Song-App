@@ -7,13 +7,15 @@ services:
     ports:
       - "5000:5000"
     environment:
-      MONGO_URL: mongodb://admin:5V2NuPFfT7yRvsYJ@SG-songs-66516.servers.mongodirector.com:27017/admin
+      MONGO_URL: mongodb+srv://Getye:getyepass123@song.eml2d.mongodb.net/?retryWrites=true&w=majority&appName=song
+      
     depends_on:
       - mongo
     networks:
       - mynetwork
     dns:
-       - 172.25.16.1
+       - 8.8.8.8 # Google DNS
+       - 1.1.1.1 # Cloudflare DNS
   
   # MongoDB Service
   mongo:
