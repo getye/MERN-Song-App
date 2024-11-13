@@ -16,7 +16,8 @@ const TableBox = styled.div`
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
-  padding-bottom: 5%;
+  padding-bottom: 16px;
+  padding-top: 28px;
   padding-right: 2%;
   align-items: center;
 `;
