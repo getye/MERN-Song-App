@@ -69,13 +69,11 @@ const TableHead = styled.th`
 `;
 
 const UpdateButton = styled.button`
-  background-color: #0000FF;
-  color: white;
+  color: #0000FF;
 `;
 
 const DeleteButton = styled.button`
-  background-color: #FF0000;
-  color: white;
+  color: #FF0000;
 `;
 
 const LatestSongContainer = styled.div`
