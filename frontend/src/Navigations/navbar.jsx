@@ -42,7 +42,7 @@ export const Navbar = () => {
     <NavbarContainer>
       <div>Song App</div> 
       <div>
-        <NavItem href="/">Dashboard</NavItem>
+        <NavItem href="/">Home</NavItem>
         <NavItem href="/add">Add Song</NavItem>
         <NavItem href="/view">View Song</NavItem>
       </div>
