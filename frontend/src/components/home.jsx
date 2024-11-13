@@ -6,32 +6,7 @@ import { PieChart, Pie,  Cell } from 'recharts';
 import styled from '@emotion/styled';
 import { Grid } from '@mui/material';
 
-const MainContainer = styled.div`
-  padding-left: 25px;
-  padding-top: 5%;
-`;
 
-
-const BarChartContainer = styled.div`
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 70%;
-  padding-bottom: 5%;
-  padding-right: 4%;
-`;
-
-const PieChartContainer = styled.div`
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  padding-left: 1%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 70%;
-  padding-bottom: 5%;
-  padding-right: 4%;
-`;
 
 const TableBox = styled.div`
   box-shadow: 3px 4px 8px 0 rgba(0,0,0,0.2);
@@ -138,10 +113,9 @@ export const Home = () => {
     const albumDataArray = Object.values(albumData);
 
   return (
-    <MainContainer>
+    <>
       <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <BarChartContainer>
               <ResponsiveContainer width="90%" height={400}>
               <ChartTitle>Number of Songs, Artists, Albums and Genres</ChartTitle>
               <BarChart
@@ -158,10 +132,8 @@ export const Home = () => {
                 <Bar dataKey="count" fill="#8884d8" barSize={20}/>
               </BarChart>
               </ResponsiveContainer>
-            </BarChartContainer>
           </Grid>
           <Grid item xs={12} md={6}>
-            <PieChartContainer>
                 <ResponsiveContainer width="90%" height={400}>
               <ChartTitle>Number of Songs per Genre</ChartTitle>
                 <PieChart >
@@ -184,12 +156,10 @@ export const Home = () => {
                   <Legend />
                 </PieChart>
                 </ResponsiveContainer>
-            </PieChartContainer>
           </Grid>
       </Grid>
       <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-              <TableBox>
                 <TableTitle>Number of Songs and Albums of Artists</TableTitle>
                   <Table>
                     <thead>
@@ -209,7 +179,6 @@ export const Home = () => {
                       ))}
                     </tbody>
                   </Table>
-              </TableBox>
             </Grid>
             <Grid item xs={12} md={6}>
               <TableBox>
@@ -235,7 +204,7 @@ export const Home = () => {
               </TableBox>
             </Grid>
       </Grid>
-    </MainContainer>
+    </>
   );
 };
 
