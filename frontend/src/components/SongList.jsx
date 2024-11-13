@@ -13,6 +13,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
+
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
@@ -20,14 +21,23 @@ const Container = styled.div`
   width: 95%;
   margin-left: 5%;
   align-items: flex-start;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+  }
 `;
 
 const TableContainer = styled.div`
   margin-top: 5px;
   width: 80%;
   align-items: center;
-`;
 
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
 
 const InputSearch = styled.input`
   padding: 8px;
@@ -36,12 +46,23 @@ const InputSearch = styled.input`
   width: 45%;
   margin-left: 50%;
   background-color: #C0C0C0;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
 `;
 
 const SeacrhContainer = styled.form`
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 const Table = styled.table`
@@ -49,6 +70,10 @@ const Table = styled.table`
   text-align: center;
   padding: 10px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const TableHeader = styled.thead`
@@ -77,11 +102,11 @@ const DeleteButton = styled.button`
 `;
 
 const LatestSongContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: auto;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: auto;
+  padding: 10px;
 `;
 
 const LatestSongUpdateContainer = styled.div`
@@ -101,8 +126,13 @@ const LatestSongDeleteContainer = styled.div`
 const Box = styled.div`
   margin-top: 5px;
   width: 80%;
-  margin-left:20%;
+  margin-left: 20%;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+  }
 `;
 
 const FormContainer = styled.form`
@@ -111,6 +141,11 @@ const FormContainer = styled.form`
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 const Label = styled.label`
@@ -124,6 +159,10 @@ const Input = styled.input`
   border-radius: 3px;
   margin-bottom: 10px;
   width: 80%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Select = styled.select`
@@ -132,6 +171,10 @@ const Select = styled.select`
   border-radius: 3px;
   margin-bottom: 10px;
   width: 85%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Button = styled.button`
@@ -142,7 +185,13 @@ const Button = styled.button`
   border-radius: 3px;
   cursor: pointer;
   width: 80px;
-  margin-left:30%;
+  margin-left: 30%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
 `;
 
 const UpdateSongForm = ({ song, isOpen, onClose }) => {
