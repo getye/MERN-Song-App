@@ -8,6 +8,7 @@ import { Grid } from '@mui/material';
 
 
 
+
 const TableBox = styled.div`
   box-shadow: 3px 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -23,7 +24,7 @@ const TableBox = styled.div`
 
 
 const Table = styled.table`
-  width: 80%;
+  width: 100%;
   border-collapse: collapse;
 `;
 
