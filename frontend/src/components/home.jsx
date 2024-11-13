@@ -4,6 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import { fetchSongs } from '../services/songActions.ts';
 import { PieChart, Pie,  Cell } from 'recharts';
 import styled from '@emotion/styled';
+import { Grid } from '@mui/material';
 
 const MainContainer = styled.div`
   padding-left: 25px;
@@ -148,95 +149,105 @@ export const Home = () => {
 
   return (
     <MainContainer>
-    <ChartContainer>
-      <BarChartContainer>
-    <ResponsiveContainer width="90%" height={400}>
-      <ChartTitle>Number of Songs, Artists, Albums and Genres</ChartTitle>
-      <BarChart
-        data={barGraphData}
-        margin={{
-          top: 10, right: 35, left: 20, bottom: 15,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="count" fill="#8884d8" barSize={20}/>
-      </BarChart>
-      </ResponsiveContainer>
-      </BarChartContainer>
-      <PieChartContainer>
-    <ResponsiveContainer width="90%" height={400}>
-    <ChartTitle>Number of Songs per Genre</ChartTitle>
-      <PieChart >
-      <Legend layout="vertical" verticalAlign="top" align="right" />
-        <Pie
-          data={data}
-          dataKey="value"
-          nameKey="name"
-          cx="50%"
-          cy="50%"
-          outerRadius={120}
-          fill="#8884d8"
-          label
-        >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Tooltip />
-        <Legend />
-      </PieChart>
-      </ResponsiveContainer>
-      </PieChartContainer>
-    </ChartContainer>
-    <TableContainer>
-      <TableBox>
+      <Grid container spacing={2}>
+        
+        {/* Bar and Pie Chart Container */}
+        <Grid item xs={12} md={6}>
+          <ChartContainer>
+            <BarChartContainer>
+              <ResponsiveContainer width="90%" height={400}>
+              <ChartTitle>Number of Songs, Artists, Albums and Genres</ChartTitle>
+              <BarChart
+                data={barGraphData}
+                margin={{
+                  top: 10, right: 35, left: 20, bottom: 15,
+                }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="count" fill="#8884d8" barSize={20}/>
+              </BarChart>
+              </ResponsiveContainer>
+            </BarChartContainer>
+            <PieChartContainer>
+                <ResponsiveContainer width="90%" height={400}>
+              <ChartTitle>Number of Songs per Genre</ChartTitle>
+                <PieChart >
+                <Legend layout="vertical" verticalAlign="top" align="right" />
+                  <Pie
+                    data={data}
+                    dataKey="value"
+                    nameKey="name"
+                    cx="50%"
+                    cy="50%"
+                    outerRadius={120}
+                    fill="#8884d8"
+                    label
+                  >
+                    {data.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    ))}
+                  </Pie>
+                  <Tooltip />
+                  <Legend />
+                </PieChart>
+                </ResponsiveContainer>
+            </PieChartContainer>
+          </ChartContainer>
+        </Grid>
 
-    <TableTitle>Number of Songs and Albums of Artists</TableTitle>
-      <Table>
-      <thead>
-        <tr>
-          <TableHeader>Artist</TableHeader>
-          <TableHeader>Number of Songs</TableHeader>
-          <TableHeader>Number of Albums</TableHeader>
-        </tr>
-      </thead>
-      <tbody>
-        {artistDataArray.map((data) => (
-          <tr key={data.artist}>
-            <TableCell>{data.artist}</TableCell>
-            <TableCell>{data.songsCount}</TableCell>
-            <TableCell>{data.albumsCount}</TableCell>
-          </tr>
-        ))}
-      </tbody>
-    </Table>
-    </TableBox>
-    <TableBox>
-      <TableTitle>Number of Songs per Albums</TableTitle>
-          <Table>
+        {/* Table Container */}
+        <Grid item xs={12} md={6}>
+          <TableContainer>
+            <TableBox>
+
+          <TableTitle>Number of Songs and Albums of Artists</TableTitle>
+            <Table>
             <thead>
               <tr>
-                <TableHeader>Album</TableHeader>
                 <TableHeader>Artist</TableHeader>
                 <TableHeader>Number of Songs</TableHeader>
+                <TableHeader>Number of Albums</TableHeader>
               </tr>
             </thead>
             <tbody>
-              {albumDataArray.map((data, index) => (
-                <tr key={index}>
-                  <TableCell>{data.album}</TableCell>
+              {artistDataArray.map((data) => (
+                <tr key={data.artist}>
                   <TableCell>{data.artist}</TableCell>
                   <TableCell>{data.songsCount}</TableCell>
+                  <TableCell>{data.albumsCount}</TableCell>
                 </tr>
               ))}
             </tbody>
           </Table>
-    </TableBox>
-    </TableContainer>
+          </TableBox>
+          <TableBox>
+            <TableTitle>Number of Songs per Albums</TableTitle>
+                <Table>
+                  <thead>
+                    <tr>
+                      <TableHeader>Album</TableHeader>
+                      <TableHeader>Artist</TableHeader>
+                      <TableHeader>Number of Songs</TableHeader>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {albumDataArray.map((data, index) => (
+                      <tr key={index}>
+                        <TableCell>{data.album}</TableCell>
+                        <TableCell>{data.artist}</TableCell>
+                        <TableCell>{data.songsCount}</TableCell>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+          </TableBox>
+          </TableContainer>
+        </Grid>
+      </Grid>
     </MainContainer>
   );
 };

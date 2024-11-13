@@ -50,7 +50,7 @@ const InputSearch = styled.input`
   @media (max-width: 768px) {
     width: 80%;
     margin-left: 0;
-    margin-top: 10px;
+    margin-top: 15px;
   }
 `;
 
